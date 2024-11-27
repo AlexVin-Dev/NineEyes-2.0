@@ -1,0 +1,15 @@
+name: NineEyes
+version: '0.4.0'
+main: ru.velfan.NineEyes
+api-version: '1.21.3'
+author: SanyaFox, VelFan
+description: Plugin for NineEyes
+commands:
+  nightvision:
+    description: Дает игроку эффект ночного видения
+    usage: /nightvision
+    aliases: [nv, ne]
+
+
+
+    
