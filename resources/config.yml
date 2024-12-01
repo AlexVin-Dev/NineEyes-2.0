@@ -1,2 +1,5 @@
 # Язык по умолчанию (ru_RU, en_US)
-language: en_US
+language: ru_RU
+
+# Длительность эффекта ночного видения в секундах (6000 тиков = 5 минут)
+night_vision_duration: 6000

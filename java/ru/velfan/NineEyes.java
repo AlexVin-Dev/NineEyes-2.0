@@ -24,37 +24,48 @@ public final class NineEyes extends JavaPlugin implements CommandExecutor {
         if (!langDir.exists()) {
             langDir.mkdirs();
         }
-        saveResource("lang/en_US.properties", false);
-        saveResource("lang/ru_RU.properties", false);
+        saveResource("lang/en_US.properties", true);
+        saveResource("lang/ru_RU.properties", true);
         lang = ResourceBundle.getBundle("lang/" + langCode);
         getCommand("nightvision").setExecutor(this);
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("nightvision")) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
-                if (args.length > 0) {
-                    player = getServer().getPlayer(args[0]);
-                    if (player == null) {
-                        sender.sendMessage(lang.getString("player_not_found"));
-                        return true;
-                    }
-                }
-                if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) {
-                    player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-                    player.sendMessage(lang.getString("night_vision_disabled"));
-                } else {
-                    player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 6000, 1));
-                    player.sendMessage(lang.getString("night_vision_enabled"));
-                }
-                return true;
-            } else {
-                sender.sendMessage(lang.getString("command_only_for_players"));
+        if (!cmd.getName().equalsIgnoreCase("nightvision")) {
+            return false;
+        }
+
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(lang.getString("command_only_for_players"));
+            return true;
+        }
+
+        Player player = (Player) sender;
+
+        if (!player.hasPermission("nineeyes.nightvision")) {
+            player.sendMessage(lang.getString("no_permission"));
+            return true;
+        }
+
+        if (args.length > 0) {
+            Player targetPlayer = getServer().getPlayer(args[0]);
+            if (targetPlayer == null) {
+                sender.sendMessage(lang.getString("player_not_found"));
                 return true;
             }
+            player = targetPlayer;
         }
-        return false;
+
+        if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) {
+            player.removePotionEffect(PotionEffectType.NIGHT_VISION);
+            player.sendMessage(lang.getString("night_vision_disabled"));
+        } else {
+            int nightVisionDuration = getConfig().getInt("night_vision_duration", 6000);
+            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, nightVisionDuration, 1));
+            player.sendMessage(lang.getString("night_vision_enabled"));
+        }
+
+        return true;
     }
 }
