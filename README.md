@@ -1,99 +1,60 @@
+![NineEyes](https://cdn.modrinth.com/data/cached_images/cd01533fe58ebd06da875bd76ed35bbf17301c6d.png)
+### Команда `/nightvision`  
+
+**Описание**  
+Позволяет временно или постоянно включить эффект ночного зрения (аналогично зелью) для себя или других игроков.  
 
 ---
 
-## 🌙 Команда `/nightvision`  
-_Управляйте ночным зрением для себя или других игроков_
-
-### 📖 Синтаксис
+### Использование  
 ```css
 /nightvision [игрок]
-```
-
-### 🎯 Параметры
-| Параметр       | Тип       | Описание                                                                 |
-|----------------|-----------|--------------------------------------------------------------------------|
-| `[игрок]`      | **Optional** | Ник игрока (по умолчанию: вы). Требует права `nineeyes.nightvision.other`. |
+```  
+- **Без параметров** — эффект применяется к вам.  
+- **С ником игрока** — эффект применяется к указанному игроку (требуются права).  
 
 ---
 
-### ✨ Возможности
-- 🔄 **Переключение эффекта**  
-  Если эффект активен — команда снимет его. Если не активен — включит.
-- 👥 **Управление другими**  
-  Используйте `@ник`, чтобы применить эффект к другому игроку.
-
----
-
-### 📝 Примеры использования
+### Примеры  
 1. **Для себя:**  
    ```css
-   /nightvision  # Включить/выключить эффект
-   ```
-2. **Для других игроков:**  
+   /nightvision
+   ```  
+2. **Для другого игрока:**  
    ```css
-   /nightvision @Stevie  # Переключить эффект для Stevie
-   ```
+   /nightvision @Alex
+   ```  
 
 ---
 
-### 🔐 Права доступа
-- **Основное право:** `nineeyes.nightvision`  
-- **Для управления другими:** `nineeyes.nightvision.other`
+### Особенности  
+- Эффект можно включить или выключить одной и той же командой.  
+- Эффект сбрасывается после смерти или перезахода на сервер.  
 
 ---
 
-### 💡 Примечания
-- Эффект автоматически снимается после смерти или перезахода на сервер.
-- Для отмены эффекта просто выполните команду повторно.
+### Требуемые права  
+- `nineeyes.nightvision` — для применения к себе.  
+- `nineeyes.nightvision.other` — для применения к другим игрокам.  
 
+---  
 
-<strong>🌍 English Version</strong>
+### Английская версия (English Version)  
 
----
+**Description**  
+Toggles night vision effect (similar to a potion) for yourself or other players.  
 
-## 🌙 `/nightvision` Command  
-_Control night vision for yourself or others_
-
-### 📖 Syntax
+**Usage:**  
 ```css
 /nightvision [player]
-```
+```  
+- **No arguments** — affects you.  
+- **With player name** — affects another player (requires permission).  
 
-### 🎯 Parameters
-| Parameter       | Type       | Description                                                                 |
-|-----------------|------------|-----------------------------------------------------------------------------|
-| `[player]`      | **Optional** | Target player (default: you). Requires `nineeyes.nightvision.other` permission. |
+**Notes:**  
+- The same command enables or disables the effect.  
+- Effect is removed after death or server rejoin.  
 
----
-
-### ✨ Features
-- 🔄 **Toggle Effect**  
-  Removes the effect if active, or enables it if inactive.
-- 👥 **Manage Others**  
-  Use `@username` to apply the effect to another player.
-
----
-
-### 📝 Usage Examples
-1. **For Yourself:**  
-   ```css
-   /nightvision  # Toggle effect
-   ```
-2. **For Others:**  
-   ```css
-   /nightvision @Stevie  # Toggle for Stevie
-   ```
-
----
-
-### 🔐 Permissions
-- **Main Permission:** `nineeyes.nightvision`  
-- **To Manage Others:** `nineeyes.nightvision.other`
-
----
-
-### 💡 Notes
-- The effect is automatically removed after death or server restart.
-- To cancel the effect, simply run the command again.
-
----
+**Permissions:**  
+- `nineeyes.nightvision` — for self-use.  
+- `nineeyes.nightvision.other` — for other players.
