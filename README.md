@@ -1,4 +1,4 @@
-![NineEyes](https://cdn.modrinth.com/data/cached_images/cd01533fe58ebd06da875bd76ed35bbf17301c6d.png)
+![NineEyes](https://cdn.modrinth.com/data/cached_images/5cb32f5eb27e3a8ecfa03889393649efde60fc9e.png)
 ### Команда `/nightvision`  
 
 **Описание**  
